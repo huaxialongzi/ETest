@@ -769,7 +769,7 @@
                     "startOffset": 1984,
                     "endLine": 45,
                     "endColumn": 95,
-                    "endOffset": 2384
+                    "endOffset": 2382
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -779,7 +779,7 @@
                         "startOffset": 3997,
                         "endLine": 80,
                         "endColumn": 95,
-                        "endOffset": 4397
+                        "endOffset": 4395
                     }
                 }
             },
@@ -787,18 +787,18 @@
                 "to": {
                     "startLine": 46,
                     "startColumn": 4,
-                    "startOffset": 2389,
-                    "endColumn": 97,
-                    "endOffset": 2482
+                    "startOffset": 2387,
+                    "endColumn": 100,
+                    "endOffset": 2483
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 82,
                         "startColumn": 4,
-                        "startOffset": 4468,
-                        "endColumn": 97,
-                        "endOffset": 4561
+                        "startOffset": 4454,
+                        "endColumn": 100,
+                        "endOffset": 4550
                     }
                 }
             },
@@ -806,18 +806,18 @@
                 "to": {
                     "startLine": 47,
                     "startColumn": 4,
-                    "startOffset": 2487,
-                    "endColumn": 65,
-                    "endOffset": 2548
+                    "startOffset": 2488,
+                    "endColumn": 53,
+                    "endOffset": 2537
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 81,
                         "startColumn": 4,
-                        "startOffset": 4402,
-                        "endColumn": 65,
-                        "endOffset": 4463
+                        "startOffset": 4400,
+                        "endColumn": 53,
+                        "endOffset": 4449
                     }
                 }
             },
@@ -825,9 +825,9 @@
                 "to": {
                     "startLine": 48,
                     "startColumn": 4,
-                    "startOffset": 2553,
+                    "startOffset": 2542,
                     "endColumn": 66,
-                    "endOffset": 2615
+                    "endOffset": 2604
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -844,9 +844,9 @@
                 "to": {
                     "startLine": 49,
                     "startColumn": 4,
-                    "startOffset": 2620,
+                    "startOffset": 2609,
                     "endColumn": 42,
-                    "endOffset": 2658
+                    "endOffset": 2647
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -863,9 +863,9 @@
                 "to": {
                     "startLine": 50,
                     "startColumn": 4,
-                    "startOffset": 2663,
+                    "startOffset": 2652,
                     "endColumn": 62,
-                    "endOffset": 2721
+                    "endOffset": 2710
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -882,9 +882,9 @@
                 "to": {
                     "startLine": 51,
                     "startColumn": 4,
-                    "startOffset": 2726,
+                    "startOffset": 2715,
                     "endColumn": 46,
-                    "endOffset": 2768
+                    "endOffset": 2757
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -901,9 +901,9 @@
                 "to": {
                     "startLine": 52,
                     "startColumn": 4,
-                    "startOffset": 2773,
+                    "startOffset": 2762,
                     "endColumn": 54,
-                    "endOffset": 2823
+                    "endOffset": 2812
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -920,9 +920,9 @@
                 "to": {
                     "startLine": 53,
                     "startColumn": 4,
-                    "startOffset": 2828,
+                    "startOffset": 2817,
                     "endColumn": 79,
-                    "endOffset": 2903
+                    "endOffset": 2892
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -939,9 +939,9 @@
                 "to": {
                     "startLine": 54,
                     "startColumn": 4,
-                    "startOffset": 2908,
+                    "startOffset": 2897,
                     "endColumn": 41,
-                    "endOffset": 2945
+                    "endOffset": 2934
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -958,9 +958,9 @@
                 "to": {
                     "startLine": 55,
                     "startColumn": 4,
-                    "startOffset": 2950,
+                    "startOffset": 2939,
                     "endColumn": 69,
-                    "endOffset": 3015
+                    "endOffset": 3004
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -977,9 +977,9 @@
                 "to": {
                     "startLine": 56,
                     "startColumn": 4,
-                    "startOffset": 3020,
+                    "startOffset": 3009,
                     "endColumn": 46,
-                    "endOffset": 3062
+                    "endOffset": 3051
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -996,18 +996,18 @@
                 "to": {
                     "startLine": 57,
                     "startColumn": 4,
-                    "startOffset": 3067,
+                    "startOffset": 3056,
                     "endColumn": 53,
-                    "endOffset": 3116
+                    "endOffset": 3105
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 89,
                         "startColumn": 4,
-                        "startOffset": 4816,
+                        "startOffset": 4805,
                         "endColumn": 53,
-                        "endOffset": 4865
+                        "endOffset": 4854
                     }
                 }
             },
@@ -1015,9 +1015,9 @@
                 "to": {
                     "startLine": 58,
                     "startColumn": 4,
-                    "startOffset": 3121,
+                    "startOffset": 3110,
                     "endColumn": 71,
-                    "endOffset": 3188
+                    "endOffset": 3177
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1034,9 +1034,9 @@
                 "to": {
                     "startLine": 59,
                     "startColumn": 4,
-                    "startOffset": 3193,
+                    "startOffset": 3182,
                     "endColumn": 147,
-                    "endOffset": 3336
+                    "endOffset": 3325
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1053,9 +1053,9 @@
                 "to": {
                     "startLine": 60,
                     "startColumn": 4,
-                    "startOffset": 3341,
+                    "startOffset": 3330,
                     "endColumn": 98,
-                    "endOffset": 3435
+                    "endOffset": 3424
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1072,9 +1072,9 @@
                 "to": {
                     "startLine": 61,
                     "startColumn": 4,
-                    "startOffset": 3440,
+                    "startOffset": 3429,
                     "endColumn": 122,
-                    "endOffset": 3558
+                    "endOffset": 3547
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1091,9 +1091,9 @@
                 "to": {
                     "startLine": 62,
                     "startColumn": 4,
-                    "startOffset": 3563,
+                    "startOffset": 3552,
                     "endColumn": 73,
-                    "endOffset": 3632
+                    "endOffset": 3621
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1110,9 +1110,9 @@
                 "to": {
                     "startLine": 63,
                     "startColumn": 4,
-                    "startOffset": 3637,
+                    "startOffset": 3626,
                     "endColumn": 57,
-                    "endOffset": 3690
+                    "endOffset": 3679
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1129,9 +1129,9 @@
                 "to": {
                     "startLine": 64,
                     "startColumn": 4,
-                    "startOffset": 3695,
+                    "startOffset": 3684,
                     "endColumn": 52,
-                    "endOffset": 3743
+                    "endOffset": 3732
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1148,18 +1148,18 @@
                 "to": {
                     "startLine": 65,
                     "startColumn": 4,
-                    "startOffset": 3748,
+                    "startOffset": 3737,
                     "endColumn": 46,
-                    "endOffset": 3790
+                    "endOffset": 3779
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 85,
                         "startColumn": 4,
-                        "startOffset": 4630,
+                        "startOffset": 4619,
                         "endColumn": 46,
-                        "endOffset": 4672
+                        "endOffset": 4661
                     }
                 }
             },
@@ -1167,9 +1167,9 @@
                 "to": {
                     "startLine": 66,
                     "startColumn": 4,
-                    "startOffset": 3795,
+                    "startOffset": 3784,
                     "endColumn": 47,
-                    "endOffset": 3838
+                    "endOffset": 3827
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1186,18 +1186,18 @@
                 "to": {
                     "startLine": 67,
                     "startColumn": 4,
-                    "startOffset": 3843,
+                    "startOffset": 3832,
                     "endColumn": 66,
-                    "endOffset": 3905
+                    "endOffset": 3894
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 86,
                         "startColumn": 4,
-                        "startOffset": 4677,
+                        "startOffset": 4666,
                         "endColumn": 66,
-                        "endOffset": 4739
+                        "endOffset": 4728
                     }
                 }
             },
@@ -1205,9 +1205,9 @@
                 "to": {
                     "startLine": 68,
                     "startColumn": 4,
-                    "startOffset": 3910,
+                    "startOffset": 3899,
                     "endColumn": 37,
-                    "endOffset": 3943
+                    "endOffset": 3932
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1224,9 +1224,9 @@
                 "to": {
                     "startLine": 69,
                     "startColumn": 4,
-                    "startOffset": 3948,
+                    "startOffset": 3937,
                     "endColumn": 64,
-                    "endOffset": 4008
+                    "endOffset": 3997
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1243,9 +1243,9 @@
                 "to": {
                     "startLine": 70,
                     "startColumn": 4,
-                    "startOffset": 4013,
+                    "startOffset": 4002,
                     "endColumn": 72,
-                    "endOffset": 4081
+                    "endOffset": 4070
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1262,9 +1262,9 @@
                 "to": {
                     "startLine": 71,
                     "startColumn": 4,
-                    "startOffset": 4086,
+                    "startOffset": 4075,
                     "endColumn": 65,
-                    "endOffset": 4147
+                    "endOffset": 4136
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1281,9 +1281,9 @@
                 "to": {
                     "startLine": 72,
                     "startColumn": 4,
-                    "startOffset": 4152,
+                    "startOffset": 4141,
                     "endColumn": 69,
-                    "endOffset": 4217
+                    "endOffset": 4206
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1300,9 +1300,9 @@
                 "to": {
                     "startLine": 73,
                     "startColumn": 4,
-                    "startOffset": 4222,
+                    "startOffset": 4211,
                     "endColumn": 35,
-                    "endOffset": 4253
+                    "endOffset": 4242
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1319,9 +1319,9 @@
                 "to": {
                     "startLine": 74,
                     "startColumn": 4,
-                    "startOffset": 4258,
+                    "startOffset": 4247,
                     "endColumn": 75,
-                    "endOffset": 4329
+                    "endOffset": 4318
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1338,9 +1338,9 @@
                 "to": {
                     "startLine": 75,
                     "startColumn": 4,
-                    "startOffset": 4334,
+                    "startOffset": 4323,
                     "endColumn": 55,
-                    "endOffset": 4385
+                    "endOffset": 4374
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1357,9 +1357,9 @@
                 "to": {
                     "startLine": 76,
                     "startColumn": 4,
-                    "startOffset": 4390,
+                    "startOffset": 4379,
                     "endColumn": 59,
-                    "endOffset": 4445
+                    "endOffset": 4434
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1376,18 +1376,18 @@
                 "to": {
                     "startLine": 77,
                     "startColumn": 4,
-                    "startOffset": 4450,
+                    "startOffset": 4439,
                     "endColumn": 53,
-                    "endOffset": 4499
+                    "endOffset": 4488
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 98,
                         "startColumn": 1,
-                        "startOffset": 5375,
+                        "startOffset": 5364,
                         "endColumn": 50,
-                        "endOffset": 5424
+                        "endOffset": 5413
                     }
                 }
             },
@@ -1395,9 +1395,9 @@
                 "to": {
                     "startLine": 78,
                     "startColumn": 4,
-                    "startOffset": 4504,
+                    "startOffset": 4493,
                     "endColumn": 71,
-                    "endOffset": 4571
+                    "endOffset": 4560
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1414,9 +1414,9 @@
                 "to": {
                     "startLine": 79,
                     "startColumn": 4,
-                    "startOffset": 4576,
+                    "startOffset": 4565,
                     "endColumn": 58,
-                    "endOffset": 4630
+                    "endOffset": 4619
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1433,18 +1433,18 @@
                 "to": {
                     "startLine": 80,
                     "startColumn": 4,
-                    "startOffset": 4635,
+                    "startOffset": 4624,
                     "endColumn": 66,
-                    "endOffset": 4697
+                    "endOffset": 4686
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 87,
                         "startColumn": 4,
-                        "startOffset": 4744,
+                        "startOffset": 4733,
                         "endColumn": 66,
-                        "endOffset": 4806
+                        "endOffset": 4795
                     }
                 }
             },
@@ -1452,18 +1452,18 @@
                 "to": {
                     "startLine": 81,
                     "startColumn": 4,
-                    "startOffset": 4702,
+                    "startOffset": 4691,
                     "endColumn": 53,
-                    "endOffset": 4751
+                    "endOffset": 4740
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 97,
                         "startColumn": 1,
-                        "startOffset": 5324,
+                        "startOffset": 5313,
                         "endColumn": 50,
-                        "endOffset": 5373
+                        "endOffset": 5362
                     }
                 }
             },
@@ -1471,18 +1471,18 @@
                 "to": {
                     "startLine": 82,
                     "startColumn": 4,
-                    "startOffset": 4756,
+                    "startOffset": 4745,
                     "endColumn": 53,
-                    "endOffset": 4805
+                    "endOffset": 4794
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 96,
                         "startColumn": 1,
-                        "startOffset": 5273,
+                        "startOffset": 5262,
                         "endColumn": 50,
-                        "endOffset": 5322
+                        "endOffset": 5311
                     }
                 }
             },
@@ -1490,9 +1490,9 @@
                 "to": {
                     "startLine": 83,
                     "startColumn": 4,
-                    "startOffset": 4810,
+                    "startOffset": 4799,
                     "endColumn": 33,
-                    "endOffset": 4839
+                    "endOffset": 4828
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1509,9 +1509,9 @@
                 "to": {
                     "startLine": 84,
                     "startColumn": 4,
-                    "startOffset": 4844,
+                    "startOffset": 4833,
                     "endColumn": 46,
-                    "endOffset": 4886
+                    "endOffset": 4875
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1528,9 +1528,9 @@
                 "to": {
                     "startLine": 85,
                     "startColumn": 4,
-                    "startOffset": 4891,
+                    "startOffset": 4880,
                     "endColumn": 46,
-                    "endOffset": 4933
+                    "endOffset": 4922
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1547,9 +1547,9 @@
                 "to": {
                     "startLine": 86,
                     "startColumn": 4,
-                    "startOffset": 4938,
+                    "startOffset": 4927,
                     "endColumn": 66,
-                    "endOffset": 5000
+                    "endOffset": 4989
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1566,9 +1566,9 @@
                 "to": {
                     "startLine": 87,
                     "startColumn": 4,
-                    "startOffset": 5005,
+                    "startOffset": 4994,
                     "endColumn": 49,
-                    "endOffset": 5050
+                    "endOffset": 5039
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1585,9 +1585,9 @@
                 "to": {
                     "startLine": 88,
                     "startColumn": 4,
-                    "startOffset": 5055,
+                    "startOffset": 5044,
                     "endColumn": 63,
-                    "endOffset": 5114
+                    "endOffset": 5103
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1604,9 +1604,9 @@
                 "to": {
                     "startLine": 89,
                     "startColumn": 4,
-                    "startOffset": 5119,
+                    "startOffset": 5108,
                     "endColumn": 56,
-                    "endOffset": 5171
+                    "endOffset": 5160
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1623,9 +1623,9 @@
                 "to": {
                     "startLine": 90,
                     "startColumn": 4,
-                    "startOffset": 5176,
+                    "startOffset": 5165,
                     "endColumn": 47,
-                    "endOffset": 5219
+                    "endOffset": 5208
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1642,18 +1642,18 @@
                 "to": {
                     "startLine": 91,
                     "startColumn": 4,
-                    "startOffset": 5224,
+                    "startOffset": 5213,
                     "endColumn": 55,
-                    "endOffset": 5275
+                    "endOffset": 5264
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 93,
                         "startColumn": 1,
-                        "startOffset": 5126,
+                        "startOffset": 5115,
                         "endColumn": 52,
-                        "endOffset": 5177
+                        "endOffset": 5166
                     }
                 }
             },
@@ -1661,9 +1661,9 @@
                 "to": {
                     "startLine": 92,
                     "startColumn": 4,
-                    "startOffset": 5280,
+                    "startOffset": 5269,
                     "endColumn": 59,
-                    "endOffset": 5335
+                    "endOffset": 5324
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1680,9 +1680,9 @@
                 "to": {
                     "startLine": 93,
                     "startColumn": 4,
-                    "startOffset": 5340,
+                    "startOffset": 5329,
                     "endColumn": 67,
-                    "endOffset": 5403
+                    "endOffset": 5392
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1699,9 +1699,9 @@
                 "to": {
                     "startLine": 94,
                     "startColumn": 4,
-                    "startOffset": 5408,
+                    "startOffset": 5397,
                     "endColumn": 66,
-                    "endOffset": 5470
+                    "endOffset": 5459
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1718,18 +1718,18 @@
                 "to": {
                     "startLine": 95,
                     "startColumn": 4,
-                    "startOffset": 5475,
+                    "startOffset": 5464,
                     "endColumn": 118,
-                    "endOffset": 5589
+                    "endOffset": 5578
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 91,
                         "startColumn": 4,
-                        "startOffset": 4936,
+                        "startOffset": 4925,
                         "endColumn": 118,
-                        "endOffset": 5050
+                        "endOffset": 5039
                     }
                 }
             },
@@ -1737,18 +1737,18 @@
                 "to": {
                     "startLine": 96,
                     "startColumn": 4,
-                    "startOffset": 5594,
+                    "startOffset": 5583,
                     "endColumn": 65,
-                    "endOffset": 5655
+                    "endOffset": 5644
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 90,
                         "startColumn": 4,
-                        "startOffset": 4870,
+                        "startOffset": 4859,
                         "endColumn": 65,
-                        "endOffset": 4931
+                        "endOffset": 4920
                     }
                 }
             },
@@ -1756,9 +1756,9 @@
                 "to": {
                     "startLine": 97,
                     "startColumn": 4,
-                    "startOffset": 5660,
+                    "startOffset": 5649,
                     "endColumn": 37,
-                    "endOffset": 5693
+                    "endOffset": 5682
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1775,9 +1775,9 @@
                 "to": {
                     "startLine": 98,
                     "startColumn": 4,
-                    "startOffset": 5698,
+                    "startOffset": 5687,
                     "endColumn": 52,
-                    "endOffset": 5746
+                    "endOffset": 5735
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1794,9 +1794,9 @@
                 "to": {
                     "startLine": 99,
                     "startColumn": 4,
-                    "startOffset": 5751,
+                    "startOffset": 5740,
                     "endColumn": 100,
-                    "endOffset": 5847
+                    "endOffset": 5836
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1813,9 +1813,9 @@
                 "to": {
                     "startLine": 100,
                     "startColumn": 4,
-                    "startOffset": 5852,
+                    "startOffset": 5841,
                     "endColumn": 76,
-                    "endOffset": 5924
+                    "endOffset": 5913
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1832,9 +1832,9 @@
                 "to": {
                     "startLine": 101,
                     "startColumn": 4,
-                    "startOffset": 5929,
+                    "startOffset": 5918,
                     "endColumn": 42,
-                    "endOffset": 5967
+                    "endOffset": 5956
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1851,9 +1851,9 @@
                 "to": {
                     "startLine": 102,
                     "startColumn": 4,
-                    "startOffset": 5972,
+                    "startOffset": 5961,
                     "endColumn": 62,
-                    "endOffset": 6030
+                    "endOffset": 6019
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1870,18 +1870,18 @@
                 "to": {
                     "startLine": 103,
                     "startColumn": 4,
-                    "startOffset": 6035,
+                    "startOffset": 6024,
                     "endColumn": 47,
-                    "endOffset": 6078
+                    "endOffset": 6067
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 94,
                         "startColumn": 1,
-                        "startOffset": 5179,
+                        "startOffset": 5168,
                         "endColumn": 44,
-                        "endOffset": 5222
+                        "endOffset": 5211
                     }
                 }
             },
@@ -1889,18 +1889,18 @@
                 "to": {
                     "startLine": 104,
                     "startColumn": 4,
-                    "startOffset": 6083,
+                    "startOffset": 6072,
                     "endColumn": 51,
-                    "endOffset": 6130
+                    "endOffset": 6119
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 95,
                         "startColumn": 1,
-                        "startOffset": 5224,
+                        "startOffset": 5213,
                         "endColumn": 48,
-                        "endOffset": 5271
+                        "endOffset": 5260
                     }
                 }
             },
@@ -1908,9 +1908,9 @@
                 "to": {
                     "startLine": 105,
                     "startColumn": 4,
-                    "startOffset": 6135,
+                    "startOffset": 6124,
                     "endColumn": 59,
-                    "endOffset": 6190
+                    "endOffset": 6179
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1927,9 +1927,9 @@
                 "to": {
                     "startLine": 106,
                     "startColumn": 4,
-                    "startOffset": 6195,
+                    "startOffset": 6184,
                     "endColumn": 51,
-                    "endOffset": 6242
+                    "endOffset": 6231
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1946,9 +1946,9 @@
                 "to": {
                     "startLine": 107,
                     "startColumn": 4,
-                    "startOffset": 6247,
+                    "startOffset": 6236,
                     "endColumn": 44,
-                    "endOffset": 6287
+                    "endOffset": 6276
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1965,9 +1965,9 @@
                 "to": {
                     "startLine": 108,
                     "startColumn": 4,
-                    "startOffset": 6292,
+                    "startOffset": 6281,
                     "endColumn": 45,
-                    "endOffset": 6333
+                    "endOffset": 6322
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -1984,9 +1984,9 @@
                 "to": {
                     "startLine": 109,
                     "startColumn": 4,
-                    "startOffset": 6338,
+                    "startOffset": 6327,
                     "endColumn": 49,
-                    "endOffset": 6383
+                    "endOffset": 6372
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -2003,9 +2003,9 @@
                 "to": {
                     "startLine": 110,
                     "startColumn": 4,
-                    "startOffset": 6388,
+                    "startOffset": 6377,
                     "endColumn": 50,
-                    "endOffset": 6434
+                    "endOffset": 6423
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -2022,9 +2022,9 @@
                 "to": {
                     "startLine": 111,
                     "startColumn": 4,
-                    "startOffset": 6439,
+                    "startOffset": 6428,
                     "endColumn": 49,
-                    "endOffset": 6484
+                    "endOffset": 6473
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -2041,9 +2041,9 @@
                 "to": {
                     "startLine": 112,
                     "startColumn": 4,
-                    "startOffset": 6489,
+                    "startOffset": 6478,
                     "endColumn": 47,
-                    "endOffset": 6532
+                    "endOffset": 6521
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -2060,18 +2060,18 @@
                 "to": {
                     "startLine": 113,
                     "startColumn": 4,
-                    "startOffset": 6537,
+                    "startOffset": 6526,
                     "endColumn": 76,
-                    "endOffset": 6609
+                    "endOffset": 6598
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 92,
                         "startColumn": 1,
-                        "startOffset": 5052,
+                        "startOffset": 5041,
                         "endColumn": 73,
-                        "endOffset": 5124
+                        "endOffset": 5113
                     }
                 }
             },
@@ -2079,9 +2079,9 @@
                 "to": {
                     "startLine": 114,
                     "startColumn": 4,
-                    "startOffset": 6614,
+                    "startOffset": 6603,
                     "endColumn": 54,
-                    "endOffset": 6664
+                    "endOffset": 6653
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -2098,9 +2098,9 @@
                 "to": {
                     "startLine": 115,
                     "startColumn": 4,
-                    "startOffset": 6669,
+                    "startOffset": 6658,
                     "endColumn": 68,
-                    "endOffset": 6733
+                    "endOffset": 6722
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -2117,9 +2117,9 @@
                 "to": {
                     "startLine": 116,
                     "startColumn": 4,
-                    "startOffset": 6738,
+                    "startOffset": 6727,
                     "endColumn": 47,
-                    "endOffset": 6781
+                    "endOffset": 6770
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -2136,18 +2136,18 @@
                 "to": {
                     "startLine": 117,
                     "startColumn": 4,
-                    "startOffset": 6786,
+                    "startOffset": 6775,
                     "endColumn": 58,
-                    "endOffset": 6840
+                    "endOffset": 6829
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 84,
                         "startColumn": 4,
-                        "startOffset": 4571,
+                        "startOffset": 4560,
                         "endColumn": 58,
-                        "endOffset": 4625
+                        "endOffset": 4614
                     }
                 }
             },
@@ -2155,9 +2155,9 @@
                 "to": {
                     "startLine": 118,
                     "startColumn": 4,
-                    "startOffset": 6845,
+                    "startOffset": 6834,
                     "endColumn": 60,
-                    "endOffset": 6901
+                    "endOffset": 6890
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -2174,9 +2174,9 @@
                 "to": {
                     "startLine": 119,
                     "startColumn": 4,
-                    "startOffset": 6906,
+                    "startOffset": 6895,
                     "endColumn": 66,
-                    "endOffset": 6968
+                    "endOffset": 6957
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -2193,9 +2193,9 @@
                 "to": {
                     "startLine": 120,
                     "startColumn": 4,
-                    "startOffset": 6973,
+                    "startOffset": 6962,
                     "endColumn": 51,
-                    "endOffset": 7020
+                    "endOffset": 7009
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -2212,9 +2212,9 @@
                 "to": {
                     "startLine": 121,
                     "startColumn": 4,
-                    "startOffset": 7025,
+                    "startOffset": 7014,
                     "endColumn": 64,
-                    "endOffset": 7085
+                    "endOffset": 7074
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -2231,9 +2231,9 @@
                 "to": {
                     "startLine": 122,
                     "startColumn": 4,
-                    "startOffset": 7090,
+                    "startOffset": 7079,
                     "endColumn": 61,
-                    "endOffset": 7147
+                    "endOffset": 7136
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -2250,9 +2250,9 @@
                 "to": {
                     "startLine": 123,
                     "startColumn": 4,
-                    "startOffset": 7152,
+                    "startOffset": 7141,
                     "endColumn": 50,
-                    "endOffset": 7198
+                    "endOffset": 7187
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -2269,9 +2269,9 @@
                 "to": {
                     "startLine": 124,
                     "startColumn": 4,
-                    "startOffset": 7203,
+                    "startOffset": 7192,
                     "endColumn": 46,
-                    "endOffset": 7245
+                    "endOffset": 7234
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -2288,9 +2288,9 @@
                 "to": {
                     "startLine": 125,
                     "startColumn": 4,
-                    "startOffset": 7250,
+                    "startOffset": 7239,
                     "endColumn": 62,
-                    "endOffset": 7308
+                    "endOffset": 7297
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\strings.xml",
@@ -2307,10 +2307,10 @@
                 "to": {
                     "startLine": 126,
                     "startColumn": 4,
-                    "startOffset": 7313,
+                    "startOffset": 7302,
                     "endLine": 128,
                     "endColumn": 12,
-                    "endOffset": 7445
+                    "endOffset": 7434
                 },
                 "from": {
                     "file": "D:\\eclipse\\ETest\\res\\values\\styles.xml",
