@@ -2,28 +2,28 @@
 <instant-run
     abi="arm64-v8a,armeabi-v7a,armeabi"
     api-level="23"
-    density="xxhdpi"
+    density="xxxhdpi"
     format="7"
-    timestamp="1054584103506492" >
+    timestamp="1057835956696433" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="315" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="503" />
     <task
         name="verifier"
-        duration="0" />
+        duration="116" />
 
     <artifact
         location="D:\eclipse\ETest\build\outputs\apk\ETest-debug.apk"
         type="MAIN" />
 
-    <build timestamp="1054584103506492" >
+    <build timestamp="1057835956696433" >
         <artifact
             location="D:\eclipse\ETest\build\outputs\apk\ETest-debug.apk"
             type="MAIN" />

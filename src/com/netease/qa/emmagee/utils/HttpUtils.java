@@ -52,7 +52,6 @@ public class HttpUtils {
 							JSONObject json = new JSONObject(response.toString());
 							testSuitId = json.getInt("testSuitId");
 							EmmageeService.bw.write("Test SuitId" + Constants.COMMA + testSuitId + Constants.LINE_END);
-							Log.v(Settings.LOG_TAG, testSuitId + "");
 						}
 					} catch (IOException e) {
 						Log.v(Settings.LOG_TAG, e.toString());

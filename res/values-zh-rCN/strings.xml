@@ -75,11 +75,11 @@
     <string name="mail_settings">邮件配置</string>
     <string name="server_settings">服务器配置</string>
     <string name="version_title">版本 </string>
-    <string name="about_emmagee_intro">Emmagee是一个简单易上手的Android性能监测小工具，
+    <string name="about_emmagee_intro">ETest是一个简单易上手的Android性能监测小工具，
         主要用于监控单个App的CPU，内存，流量，电量，电流以及整体性能状态，
         同时支持自定义的监控频率以及性能数据的实时显示.</string>
-    <string name="about_team">开发团队：网易(杭州)质量保障部</string>
-    <string name="about_project_address">项目地址：https://github.com/NetEase/Emmagee</string>
+    <string name="about_team">维护团队：艺-质量流程管理部</string>
+    <string name="about_project_address">项目地址：https://github.com/huaxialongzi/ETest</string>
     
     <string name="top_activity">栈顶Activity名称</string>
     <string name="csv_encoding">GBK</string>

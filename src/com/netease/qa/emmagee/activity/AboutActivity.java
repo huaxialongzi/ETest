@@ -37,7 +37,7 @@ import com.netease.qa.emmagee.R;
  */
 public class AboutActivity extends Activity {
 
-	private static final String LOG_TAG = "Emmagee-"
+	private static final String LOG_TAG = "ETest-"
 			+ AboutActivity.class.getSimpleName();
 
 	private TextView appVersion;

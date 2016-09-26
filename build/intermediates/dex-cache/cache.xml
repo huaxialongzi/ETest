@@ -19,7 +19,7 @@
         jar="D:\eclipse\ETest\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         revision="24.0.0"
-        sha1="aa85bb5ba38a18ba81b21859e666a1c3509c4dc9">
+        sha1="33b810cf5664cf78425621121000a05ae4017088">
         <dex dex="D:\eclipse\ETest\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_089607af0ad8626c3f8bf0ba1151bd11634bfdc7\classes.dex" />
     </item>
     <item
@@ -33,7 +33,7 @@
         jar="D:\eclipse\ETest\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         revision="24.0.0"
-        sha1="5f7631d03416ac96e351e4fc7fe6c766b0e9bdcb">
+        sha1="3af67690aa06c83dfb7e63a281e60b90b9fd4978">
         <dex dex="D:\eclipse\ETest\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_35fea0b9ba9a69ea359bf2267d79b96e9316afc3\classes.dex" />
     </item>
     <item

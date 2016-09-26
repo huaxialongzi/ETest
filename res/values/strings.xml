@@ -75,12 +75,12 @@
     <string name="mail_settings">Mail Settings</string>
     <string name="server_settings">Server Settings</string>
     <string name="version_title">Version </string>
-    <string name="about_emmagee_intro">Emmagee is a practical, handy performance test tool for specified
+    <string name="about_emmagee_intro">ETest is a practical, handy performance test tool for specified
          Android App, which can monitor CPU, memory, network traffic, battery current and status. 
          Additionally, it also provides several cool features such as customizing interval of collecting
          data, rendering real-time process status in a floating window, and much more.</string>
-    <string name="about_team">Team：QA, Netease(Hangzhou)</string>
-    <string name="about_project_address">Project Site：https://github.com/NetEase/Emmagee</string>
+    <string name="about_team">Team：QA, ETest</string>
+    <string name="about_project_address">Project Site：https://github.com/huaxialongzi/ETest</string>
     
     <string name="top_activity">Top Activity Name</string>
     <string name="csv_encoding">UTF-8</string>
