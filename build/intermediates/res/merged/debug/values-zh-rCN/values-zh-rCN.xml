@@ -7,7 +7,7 @@
     <string name="about_project_address">项目地址：https://github.com/NetEase/Emmagee</string>
     <string name="about_team">开发团队：网易(杭州)质量保障部</string>
     <string name="android_system_version">Android系统版本</string>
-    <string name="app_name">Emmagee</string>
+    <string name="app_name">ETest</string>
     <string name="app_used_cpu_ratio">应用占用CPU率(%)</string>
     <string name="battery">电量(%)</string>
     <string name="calculating">计算中...</string>
@@ -29,13 +29,18 @@
     <string name="exit">退出</string>
     <string name="floating_window">显示浮窗</string>
     <string name="format_incorrect_format">格式不正确</string>
+    <string name="format_incorrect_ip">服务器IP格式不正确</string>
+    <string name="format_incorrect_port">端口号格式不正确</string>
     <string name="fps">帧率</string>
     <string name="info_incomplete_toast">配置不完整</string>
     <string name="mail_settings">邮件配置</string>
     <string name="mem_size">机器内存大小(MB)</string>
+    <string name="mobile_brand">手机品牌</string>
     <string name="mobile_free_mem">机器剩余内存(MB)</string>
     <string name="mobile_type">手机型号</string>
     <string name="native_heap">Native heap alloc/size(KB)</string>
+    <string name="network_name">网络名称</string>
+    <string name="network_type">网络类型</string>
     <string name="ok">确定</string>
     <string name="open_wifi">开启WIFI</string>
     <string name="password">密码:</string>
@@ -44,6 +49,7 @@
     <string name="process_overall_cpu">应用/总体CPU:</string>
     <string name="process_package">应用包名</string>
     <string name="process_pid">应用PID</string>
+    <string name="process_version">应用版本号</string>
     <string name="quite_alert">再点击一次退出应用</string>
     <string name="receiver">收件人(多人以空格分割):</string>
     <string name="receiver_mail_toast">收件人邮箱:</string>
@@ -55,6 +61,10 @@
     <string name="send_success_toast">测试结果报表已发送至邮箱:</string>
     <string name="sender">发件人:</string>
     <string name="sender_mail_toast">发件人邮箱:</string>
+    <string name="server_ip">服务器IP地址</string>
+    <string name="server_port">端口号</string>
+    <string name="server_settings">服务器配置</string>
+    <string name="server_test">测试服务器连接</string>
     <string name="setting">设置</string>
     <string name="smtp">SMTP服务器:</string>
     <string name="start_test">开始测试</string>

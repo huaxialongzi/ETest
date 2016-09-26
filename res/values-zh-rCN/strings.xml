@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Emmagee</string>
+    <string name="app_name">ETest</string>
     <string name="setting">设置</string>
     <string name="exit">退出</string>
 

@@ -47,7 +47,7 @@
     <string name="about_project_address">Project Site：https://github.com/NetEase/Emmagee</string>
     <string name="about_team">Team：QA, Netease(Hangzhou)</string>
     <string name="android_system_version">Android Version</string>
-    <string name="app_name">Emmagee</string>
+    <string name="app_name">ETest</string>
     <string name="app_used_cpu_ratio">App Used CPU(%)</string>
     <string name="battery">Battery(%)</string>
     <string name="calculating">Calculating...</string>
@@ -69,13 +69,18 @@
     <string name="exit">Exit</string>
     <string name="floating_window">Show Floating Window</string>
     <string name="format_incorrect_format">Invalid email format</string>
+    <string name="format_incorrect_ip">Invalid ip format</string>
+    <string name="format_incorrect_port">Invalid port format</string>
     <string name="fps">FPS</string>
     <string name="info_incomplete_toast">Incomplete email settings</string>
     <string name="mail_settings">Mail Settings</string>
     <string name="mem_size">Device Memory Size(MB)</string>
+    <string name="mobile_brand">Mobile Brand</string>
     <string name="mobile_free_mem">System Available Memory(MB)</string>
     <string name="mobile_type">Device Brand/Model</string>
     <string name="native_heap">Native heap alloc/size(KB)</string>
+    <string name="network_name">Network Name</string>
+    <string name="network_type">Network Type</string>
     <string name="ok">OK</string>
     <string name="open_wifi">WIFI Off</string>
     <string name="password">Password:</string>
@@ -84,6 +89,7 @@
     <string name="process_overall_cpu">App/System CPU:</string>
     <string name="process_package">Package Name</string>
     <string name="process_pid">App PID</string>
+    <string name="process_version">App Version</string>
     <string name="quite_alert">Click again to exit</string>
     <string name="receiver">Receivers(separated by space):</string>
     <string name="receiver_mail_toast">Receiver\'s email:</string>
@@ -95,6 +101,10 @@
     <string name="send_success_toast">Test result has been sent to:</string>
     <string name="sender">Sender:</string>
     <string name="sender_mail_toast">Sender\'s email:</string>
+    <string name="server_ip">Server IP</string>
+    <string name="server_port">Server Port</string>
+    <string name="server_settings">Server Settings</string>
+    <string name="server_test">Server Test</string>
     <string name="setting">Settings</string>
     <string name="smtp">SMTP Server:</string>
     <string name="start_test">Start Test</string>
