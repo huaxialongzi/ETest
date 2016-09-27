@@ -30,6 +30,7 @@ public class HttpUtils {
 				synchronized (synchronize) {
 					HttpURLConnection connection = null;
 					try {
+						Thread.currentThread().setName("createTestSuit");
 						createUrl = "http://" + Settings.serverIp + ":" + Settings.serverPort + "/createTestSuit?data=" + URLEncoder.encode(param_json, "utf-8");
 						URL url = new URL(createUrl);
 						connection = (HttpURLConnection) url.openConnection();
@@ -77,6 +78,7 @@ public class HttpUtils {
 			@Override
 			public void run() {
 				synchronized (synchronize) {
+					Thread.currentThread().setName("postAppPerfData");
 					HttpURLConnection connection = null;
 					try {
 						createUrl = "http://" + Settings.serverIp + ":" + Settings.serverPort + "/postAppPerfData?data=" + URLEncoder.encode(param_json, "utf-8");
@@ -108,6 +110,7 @@ public class HttpUtils {
 			@Override
 			public void run() {
 				synchronized (synchronize) {
+					Thread.currentThread().setName("stopTest");
 					HttpURLConnection connection = null;
 					try {
 						createUrl = "http://" + Settings.serverIp + ":" + Settings.serverPort + "/stopTest?testSuitId="+testSuitId;
@@ -118,6 +121,38 @@ public class HttpUtils {
 						connection.setReadTimeout(3000);
 						int responsecode = connection.getResponseCode();
 						Log.v(Settings.LOG_TAG, "stopTest url:" + createUrl + "," + responsecode);
+					} catch (IOException e) {
+						Log.v(Settings.LOG_TAG, e.toString());
+						e.printStackTrace();
+					} finally {
+						if (connection != null) {
+							connection.disconnect();
+						}
+
+					}
+				}
+			}
+		}).start();
+
+		return "";
+	}
+
+	public static String postLog(final String log_json) {
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				synchronized (synchronize) {
+					Thread.currentThread().setName("postLog");
+					HttpURLConnection connection = null;
+					try {
+						createUrl = "http://" + Settings.serverIp + ":" + Settings.serverPort + "/postLog?data=" + URLEncoder.encode(log_json, "utf-8");
+						URL url = new URL(createUrl);
+						connection = (HttpURLConnection) url.openConnection();
+						connection.setRequestMethod("GET");
+						connection.setConnectTimeout(3000);
+						connection.setReadTimeout(3000);
+						int responsecode = connection.getResponseCode();
+						Log.v(Settings.LOG_TAG, "postLog url:" + createUrl + "," + responsecode);
 					} catch (IOException e) {
 						Log.v(Settings.LOG_TAG, e.toString());
 						e.printStackTrace();

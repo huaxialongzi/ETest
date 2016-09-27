@@ -190,7 +190,7 @@ public class EmmageeService extends Service {
 		Log.i(LOG_TAG, "service onStart");
 		PendingIntent contentIntent = PendingIntent.getActivity(getBaseContext(), 0, new Intent(this, MainPageActivity.class), 0);
 		NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
-		builder.setContentIntent(contentIntent).setSmallIcon(R.drawable.icon).setWhen(System.currentTimeMillis()).setAutoCancel(true).setContentTitle("Emmagee");
+		builder.setContentIntent(contentIntent).setSmallIcon(R.drawable.icon).setWhen(System.currentTimeMillis()).setAutoCancel(true).setContentTitle("ETest");
 		startForeground(startId, builder.build());
 
 		pid = intent.getExtras().getInt("pid");
@@ -426,7 +426,7 @@ public class EmmageeService extends Service {
 					windowManager.updateViewLayout(viFloatingWindow, wmParams);
 				}
 				// get app start time from logcat on every task running
-				getStartTimeFromLogcat();
+				//getStartTimeFromLogcat();
 			} else {
 				Intent intent = new Intent();
 				intent.putExtra("isServiceStop", true);
@@ -440,6 +440,7 @@ public class EmmageeService extends Service {
 
 	/**
 	 * Try to get start time from logcat.
+	 * not used now
 	 */
 	private void getStartTimeFromLogcat() {
 		if (!isGetStartTime || getStartTimeCount >= MAX_START_TIME_COUNT) {

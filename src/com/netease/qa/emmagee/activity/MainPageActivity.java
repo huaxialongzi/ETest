@@ -60,7 +60,7 @@ import com.netease.qa.emmagee.utils.Settings;
  */
 public class MainPageActivity extends Activity {
 
-	private static final String LOG_TAG = "Emmagee-" + MainPageActivity.class.getSimpleName();
+	private static final String LOG_TAG = "ETest-" + MainPageActivity.class.getSimpleName();
 
 	private static final int TIMEOUT = 20000;
 
@@ -104,6 +104,7 @@ public class MainPageActivity extends Activity {
 						// clear logcat
 						try {
 							Runtime.getRuntime().exec("logcat -c");
+							Runtime.getRuntime().exec("logcat -v time |grep --line-buffered -E \"GreenDaoHelper_insert_e|Displayed\" | grep -v -E \"show|logs|back|info\"");
 						} catch (IOException e) {
 							Log.d(LOG_TAG, e.getMessage());
 						}

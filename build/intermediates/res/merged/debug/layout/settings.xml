@@ -75,9 +75,10 @@
                 android:paddingBottom="@dimen/layout_vertical_margin_small"
                 android:paddingLeft="16.0dip"
                 android:paddingRight="16.0dip"
-                android:progress="5"
+                android:progress="3"
                 android:progressDrawable="@drawable/custom_seekbar"
-                android:thumb="@drawable/seekbar_thumb" />
+                android:thumb="@drawable/seekbar_thumb"
+                android:indeterminate="false" />
 
             <View
                 android:layout_width="match_parent"
