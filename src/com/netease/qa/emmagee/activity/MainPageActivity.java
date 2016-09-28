@@ -104,7 +104,7 @@ public class MainPageActivity extends Activity {
 						// clear logcat
 						try {
 							Runtime.getRuntime().exec("logcat -c");
-							Runtime.getRuntime().exec("logcat -v time |grep --line-buffered -E \"GreenDaoHelper_insert_e|Displayed\" | grep -v -E \"show|logs|back|info\"");
+							HttpUtils.postLog("",isServiceStop);
 						} catch (IOException e) {
 							Log.d(LOG_TAG, e.getMessage());
 						}

@@ -137,23 +137,43 @@ public class HttpUtils {
 		return "";
 	}
 
-	public static String postLog(final String log_json) {
+	public static String postLog(final String log_json, final boolean isServiceStop) {
 		new Thread(new Runnable() {
 			@Override
 			public void run() {
 				synchronized (synchronize) {
+					Log.v(Settings.LOG_TAG,"start postLog");
 					Thread.currentThread().setName("postLog");
 					HttpURLConnection connection = null;
 					try {
-						createUrl = "http://" + Settings.serverIp + ":" + Settings.serverPort + "/postLog?data=" + URLEncoder.encode(log_json, "utf-8");
-						URL url = new URL(createUrl);
-						connection = (HttpURLConnection) url.openConnection();
-						connection.setRequestMethod("GET");
-						connection.setConnectTimeout(3000);
-						connection.setReadTimeout(3000);
-						int responsecode = connection.getResponseCode();
-						Log.v(Settings.LOG_TAG, "postLog url:" + createUrl + "," + responsecode);
+						String logcatCommand = "logcat -v time |grep --line-buffered -E \"GreenDaoHelper_insert_e|Displayed\" | grep -v -E \"show|logs|back|info\"";
+						Process process = Runtime.getRuntime().exec(logcatCommand);
+						BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+						StringBuilder stringBuilder = new StringBuilder();
+						String line = "";
+
+						while (true){
+							line = bufferedReader.readLine();
+							if(line == null){
+								Thread.currentThread().sleep(Settings.SLEEP_TIME);
+								continue;
+							}else{
+								Log.v(Settings.LOG_TAG,line);
+							}
+						}
+
+//						createUrl = "http://" + Settings.serverIp + ":" + Settings.serverPort + "/postLog?data=" + URLEncoder.encode(log_json, "utf-8");
+//						URL url = new URL(createUrl);
+//						connection = (HttpURLConnection) url.openConnection();
+//						connection.setRequestMethod("GET");
+//						connection.setConnectTimeout(3000);
+//						connection.setReadTimeout(3000);
+//						int responsecode = connection.getResponseCode();
+//						Log.v(Settings.LOG_TAG, "postLog url:" + createUrl + "," + responsecode);
 					} catch (IOException e) {
+						Log.v(Settings.LOG_TAG, e.toString());
+						e.printStackTrace();
+					} catch (InterruptedException e) {
 						Log.v(Settings.LOG_TAG, e.toString());
 						e.printStackTrace();
 					} finally {
