@@ -45,7 +45,7 @@ import com.netease.qa.emmagee.utils.Settings;
  */
 public class SettingsActivity extends Activity {
 
-	private static final String LOG_TAG = "Emmagee-" + SettingsActivity.class.getSimpleName();
+	private static final String LOG_TAG = "ETest-" + SettingsActivity.class.getSimpleName();
 
 	private CheckBox chkFloat;
 	private CheckBox chkRoot;
@@ -82,7 +82,7 @@ public class SettingsActivity extends Activity {
 		btnSave.setVisibility(ImageView.INVISIBLE);
 		
 		preferences = Settings.getDefaultSharedPreferences(getApplicationContext());
-		int interval = preferences.getInt(Settings.KEY_INTERVAL, 5);
+		int interval = preferences.getInt(Settings.KEY_INTERVAL, 2);
 		boolean isfloat = preferences.getBoolean(Settings.KEY_ISFLOAT, true);
 		boolean isRoot = preferences.getBoolean(Settings.KEY_ROOT, false);
 		boolean autoStop = preferences.getBoolean(Settings.KEY_AUTO_STOP, true);

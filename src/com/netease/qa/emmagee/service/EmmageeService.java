@@ -85,7 +85,7 @@ import com.netease.qa.emmagee.utils.Utils;
  */
 public class EmmageeService extends Service {
 
-	private final static String LOG_TAG = "Emmagee-" + EmmageeService.class.getSimpleName();
+	private final static String LOG_TAG = "ETest-" + EmmageeService.class.getSimpleName();
 
 	private static final String BLANK_STRING = "";
 
@@ -271,12 +271,14 @@ public class EmmageeService extends Service {
 			mDateTime = formatter.format(cal.getTime().getTime());
 		if (android.os.Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED)) {
 			// 在4.0以下的低版本上/sdcard连接至/mnt/sdcard，而4.0以上版本则连接至/storage/sdcard0，所以有外接sdcard，/sdcard路径一定存在
-			resultFilePath = "/sdcard" + File.separator + "Emmagee_TestResult_" + mDateTime + ".csv";
+//			resultFilePath = "/sdcard" + File.separator + "Emmagee_TestResult_" + mDateTime + ".csv";
+			resultFilePath = "/sdcard" + File.separator + "ETest_Result.csv";
 			// resultFilePath =
 			// android.os.Environment.getExternalStorageDirectory() +
 			// File.separator + "Emmagee_TestResult_" + mDateTime + ".csv";
 		} else {
-			resultFilePath = getBaseContext().getFilesDir().getPath() + File.separator + "Emmagee_TestResult_" + mDateTime + ".csv";
+//			resultFilePath = getBaseContext().getFilesDir().getPath() + File.separator + "Emmagee_TestResult_" + mDateTime + ".csv";
+			resultFilePath = getBaseContext().getFilesDir().getPath() + File.separator + "ETest_Result.csv";
 		}
 		try {
 			File resultFile = new File(resultFilePath);

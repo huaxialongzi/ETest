@@ -13,7 +13,9 @@ import org.json.JSONObject;
 
 import com.netease.qa.emmagee.service.EmmageeService;
 
+import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
 
 public class HttpUtils {
 	public static int testSuitId;
@@ -142,24 +144,34 @@ public class HttpUtils {
 			@Override
 			public void run() {
 				synchronized (synchronize) {
-					Log.v(Settings.LOG_TAG,"start postLog");
+//					Log.v(Settings.LOG_TAG,"start postLog");
 					Thread.currentThread().setName("postLog");
 					HttpURLConnection connection = null;
+					BufferedReader bufferedReader=null;
+					Process process=null;
 					try {
-						String logcatCommand = "logcat -v time |grep --line-buffered -E \"GreenDaoHelper_insert_e|Displayed\" | grep -v -E \"show|logs|back|info\"";
-						Process process = Runtime.getRuntime().exec(logcatCommand);
-						BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+//						String logcatCommand = "logcat -v time |grep --line-buffered -E \"GreenDaoHelper_insert_e|Displayed\" | grep -v -E \"show|logs|back|info\"";
+						String logcatCommand = "logcat";
+						process = Runtime.getRuntime().exec(logcatCommand);
+						bufferedReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
 						StringBuilder stringBuilder = new StringBuilder();
 						String line = "";
 
 						while (true){
+//							bufferedReader.mark(10);
+
 							line = bufferedReader.readLine();
 							if(line == null){
+//								bufferedReader.reset();
 								Thread.currentThread().sleep(Settings.SLEEP_TIME);
 								continue;
 							}else{
-								Log.v(Settings.LOG_TAG,line);
+								if (line.contains("ETest")){
+
+								}
+								EmmageeService.bw.write(line + Constants.LINE_END );
 							}
+							Thread.currentThread().sleep(500);
 						}
 
 //						createUrl = "http://" + Settings.serverIp + ":" + Settings.serverPort + "/postLog?data=" + URLEncoder.encode(log_json, "utf-8");
@@ -177,9 +189,16 @@ public class HttpUtils {
 						Log.v(Settings.LOG_TAG, e.toString());
 						e.printStackTrace();
 					} finally {
-						if (connection != null) {
-							connection.disconnect();
+						try {
+							process.destroy();
+							bufferedReader.close();
+							if (connection != null) {
+								connection.disconnect();
+							}
+						} catch (IOException e) {
+							e.printStackTrace();
 						}
+
 
 					}
 				}

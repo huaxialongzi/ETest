@@ -104,7 +104,7 @@ public class MainPageActivity extends Activity {
 						// clear logcat
 						try {
 							Runtime.getRuntime().exec("logcat -c");
-							HttpUtils.postLog("",isServiceStop);
+
 						} catch (IOException e) {
 							Log.d(LOG_TAG, e.getMessage());
 						}

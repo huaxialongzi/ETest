@@ -40,7 +40,7 @@ import android.util.Log;
  */
 public class ProcessInfo {
 
-	private static final String LOG_TAG = "Emmagee-" + ProcessInfo.class.getSimpleName();
+	private static final String LOG_TAG = "ETest-" + ProcessInfo.class.getSimpleName();
 
 	private static final String PACKAGE_NAME = "com.netease.qa.emmagee";
 	private static final int ANDROID_M = 22;

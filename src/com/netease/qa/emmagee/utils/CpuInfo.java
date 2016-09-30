@@ -48,7 +48,7 @@ import com.netease.qa.emmagee.R;
  */
 public class CpuInfo {
 
-	private static final String LOG_TAG = "Emmagee-" + CpuInfo.class.getSimpleName();
+	private static final String LOG_TAG = "ETest-" + CpuInfo.class.getSimpleName();
 
 	private Context context;
 	private long processCpu;

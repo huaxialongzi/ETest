@@ -218,7 +218,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/line_height"
                 android:background="@color/light_gray" />
-            
+
             <LinearLayout
                 android:id="@+id/server_settings"
                 android:layout_width="match_parent"
