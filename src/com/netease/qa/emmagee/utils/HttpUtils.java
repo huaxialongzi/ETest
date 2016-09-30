@@ -151,7 +151,8 @@ public class HttpUtils {
 					Process process=null;
 					try {
 //						String logcatCommand = "logcat -v time |grep --line-buffered -E \"GreenDaoHelper_insert_e|Displayed\" | grep -v -E \"show|logs|back|info\"";
-						String logcatCommand = "logcat";
+						String logcatCommand = "logcat -v time";
+						ShellUtils.execCommand(logcatCommand, true);
 						process = Runtime.getRuntime().exec(logcatCommand);
 						bufferedReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
 						StringBuilder stringBuilder = new StringBuilder();
@@ -166,12 +167,12 @@ public class HttpUtils {
 								Thread.currentThread().sleep(Settings.SLEEP_TIME);
 								continue;
 							}else{
-								if (line.contains("ETest")){
+								if (line.contains("ETest")||line.contains("mylog")||line.contains("Displayed")){
 
 								}
 								EmmageeService.bw.write(line + Constants.LINE_END );
 							}
-							Thread.currentThread().sleep(500);
+							Thread.currentThread().sleep(300);
 						}
 
 //						createUrl = "http://" + Settings.serverIp + ":" + Settings.serverPort + "/postLog?data=" + URLEncoder.encode(log_json, "utf-8");

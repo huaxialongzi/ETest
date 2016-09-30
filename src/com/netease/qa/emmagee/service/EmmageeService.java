@@ -273,9 +273,6 @@ public class EmmageeService extends Service {
 			// 在4.0以下的低版本上/sdcard连接至/mnt/sdcard，而4.0以上版本则连接至/storage/sdcard0，所以有外接sdcard，/sdcard路径一定存在
 //			resultFilePath = "/sdcard" + File.separator + "Emmagee_TestResult_" + mDateTime + ".csv";
 			resultFilePath = "/sdcard" + File.separator + "ETest_Result.csv";
-			// resultFilePath =
-			// android.os.Environment.getExternalStorageDirectory() +
-			// File.separator + "Emmagee_TestResult_" + mDateTime + ".csv";
 		} else {
 //			resultFilePath = getBaseContext().getFilesDir().getPath() + File.separator + "Emmagee_TestResult_" + mDateTime + ".csv";
 			resultFilePath = getBaseContext().getFilesDir().getPath() + File.separator + "ETest_Result.csv";
@@ -294,6 +291,7 @@ public class EmmageeService extends Service {
 			for (int i = 0; i < cpuList.size(); i++) {
 				multiCpuTitle += Constants.COMMA + cpuList.get(i) + getString(R.string.total_usage);
 			}
+			HttpUtils.postLog("",isServiceStop);
 			bw.write(getString(R.string.process_package) + Constants.COMMA + packageName + Constants.LINE_END 
 					+ getString(R.string.process_name) + Constants.COMMA + processName + Constants.LINE_END 
 					+ getString(R.string.process_version) + Constants.COMMA + appVersion + Constants.LINE_END 
