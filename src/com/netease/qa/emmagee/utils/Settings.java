@@ -27,7 +27,7 @@ public final class Settings {
 	public static final String KEY_SERVER_IP = "serverip";
 	public static final String KEY_SERVER_PORT = "serverport";
 
-	public static final long SLEEP_TIME = 2000;
+	public static final long SLEEP_TIME = 1000;
 	
 	
 	public static SharedPreferences getDefaultSharedPreferences(Context context) {
