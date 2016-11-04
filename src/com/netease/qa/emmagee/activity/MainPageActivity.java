@@ -52,6 +52,7 @@ import com.netease.qa.emmagee.utils.HttpUtils;
 import com.netease.qa.emmagee.utils.ProcessInfo;
 import com.netease.qa.emmagee.utils.Programe;
 import com.netease.qa.emmagee.utils.Settings;
+import com.netease.qa.emmagee.utils.Utils;
 
 /**
  * Main Page of Emmagee
@@ -98,12 +99,17 @@ public class MainPageActivity extends Activity {
 						String packageName = adapter.checkedProg.getPackageName();
 						String processName = adapter.checkedProg.getProcessName();
 						String appVersion = adapter.checkedProg.getAppVersion();
+						int uid = adapter.checkedProg.getUid();
 						Intent intent = getPackageManager().getLaunchIntentForPackage(packageName);
 						String startActivity = "";
 						Log.d(LOG_TAG, packageName);
 						// clear logcat
 						try {
 							Runtime.getRuntime().exec("logcat -c");
+							Utils.deletefile("/sdcard/elong_mvt_log.txt");
+							Utils.deletefile("/sdcard/elong_qa.txt");
+							Utils.deletefile("/sdcard/logcat.log");
+							Utils.deletefile("/sdcard/ElongNetLog.txt");
 
 						} catch (IOException e) {
 							Log.d(LOG_TAG, e.getMessage());
@@ -132,7 +138,6 @@ public class MainPageActivity extends Activity {
 					btnTest.setText(getString(R.string.start_test));
 					Toast.makeText(MainPageActivity.this, getString(R.string.test_result_file_toast) + EmmageeService.resultFilePath, Toast.LENGTH_LONG).show();
 					stopService(monitorService);
-					HttpUtils.stopTest();
 				}
 			}
 		});
@@ -253,7 +258,6 @@ public class MainPageActivity extends Activity {
 				if (monitorService != null) {
 					Log.d(LOG_TAG, "stop service");
 					stopService(monitorService);
-					HttpUtils.stopTest();
 				}
 				Log.d(LOG_TAG, "exit Emmagee");
 				finish();

@@ -18,20 +18,23 @@ package com.netease.qa.emmagee.service;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.io.PipedInputStream;
+import java.net.HttpURLConnection;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Locale;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -46,7 +49,6 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.wifi.WifiManager;
 import android.os.BatteryManager;
-import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
@@ -89,6 +91,11 @@ public class EmmageeService extends Service {
 
     private static final String BLANK_STRING = "";
 
+    public static final String COMMAND_SU = "su";
+    public static final String COMMAND_SH = "sh";
+    public static final String COMMAND_EXIT = "exit\n";
+    public static final String COMMAND_LINE_END = "\n";
+
     private WindowManager windowManager = null;
     private WindowManager.LayoutParams wmParams = null;
     private View viFloatingWindow;
@@ -118,6 +125,12 @@ public class EmmageeService extends Service {
     private EncryptData des;
     private ProcessInfo procInfo;
     private int statusBarHeight;
+
+    private JSONObject jsonObject = new JSONObject();
+    private JSONArray jsonArray = new JSONArray();
+    private static BufferedReader bufferedReader = null;
+    private static BufferedWriter bufferedWriter = null;
+    private boolean needuploadlog = true;
 
     public static BufferedWriter bw;
     public static FileOutputStream out;
@@ -226,14 +239,16 @@ public class EmmageeService extends Service {
                     intent.putExtra("isServiceStop", true);
                     intent.setAction(SERVICE_ACTION);
                     sendBroadcast(intent);
-                    HttpUtils.stopTest();
+
                     stopSelf();
                 }
             });
             createFloatingWindow();
         }
         createResultCsv();
-        HttpUtils.postLog(false, true);
+        if (isRoot) {
+            getlog();
+        }
         handler.postDelayed(task, 1000);
         return START_NOT_STICKY;
     }
@@ -261,20 +276,11 @@ public class EmmageeService extends Service {
      * write the test result to csv format report.
      */
     private void createResultCsv() {
-        Calendar cal = Calendar.getInstance();
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
-        String mDateTime;
         String heapData = "";
-        if ((Build.MODEL.equals("sdk")) || (Build.MODEL.equals("google_sdk")))
-            mDateTime = formatter.format(cal.getTime().getTime() + 8 * 60 * 60 * 1000);
-        else
-            mDateTime = formatter.format(cal.getTime().getTime());
         if (android.os.Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED)) {
             // 在4.0以下的低版本上/sdcard连接至/mnt/sdcard，而4.0以上版本则连接至/storage/sdcard0，所以有外接sdcard，/sdcard路径一定存在
-//			resultFilePath = "/sdcard" + File.separator + "Emmagee_TestResult_" + mDateTime + ".csv";
             resultFilePath = "/sdcard" + File.separator + "ETest_Result.csv";
         } else {
-//			resultFilePath = getBaseContext().getFilesDir().getPath() + File.separator + "Emmagee_TestResult_" + mDateTime + ".csv";
             resultFilePath = getBaseContext().getFilesDir().getPath() + File.separator + "ETest_Result.csv";
         }
         try {
@@ -421,10 +427,13 @@ public class EmmageeService extends Service {
         public void run() {
             if (!isServiceStop) {
                 dataRefresh();
+
                 handler.postDelayed(this, delaytime);
                 if (isFloating && viFloatingWindow != null) {
                     windowManager.updateViewLayout(viFloatingWindow, wmParams);
                 }
+
+
                 // get app start time from logcat on every task running
                 //getStartTimeFromLogcat();
             } else {
@@ -432,11 +441,151 @@ public class EmmageeService extends Service {
                 intent.putExtra("isServiceStop", true);
                 intent.setAction(SERVICE_ACTION);
                 sendBroadcast(intent);
-                HttpUtils.stopTest();
                 stopSelf();
             }
         }
     };
+
+
+    public void getlog() {
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Process process = null;
+                    DataOutputStream os = null;
+                    String logcatCommand = "logcat |grep --line-buffered -E \"GreenDaoHelper_insert_e|Displayed\" | grep -v -E \"show|logs|back|info\"";
+                    Runtime.getRuntime().exec("logcat -c");
+                    process = Runtime.getRuntime().exec(isRoot ? COMMAND_SU : COMMAND_SH);
+                    os = new DataOutputStream(process.getOutputStream());
+                    os.write(logcatCommand.getBytes());
+                    os.writeBytes(COMMAND_LINE_END);
+                    os.flush();
+                    bufferedReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+                    bufferedWriter = new BufferedWriter(new FileWriter(new File("/sdcard/logcat.log")));
+                    String line = null;
+                    while (!isServiceStop) {
+                        while ((line = bufferedReader.readLine()) != null) {
+                            bufferedWriter.write(line + Constants.LINE_END);
+                        }
+                        try {
+                            Thread.currentThread().sleep(Settings.SLEEP_TIME);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    os.close();
+                    bufferedWriter.flush();
+                    bufferedReader.close();
+                    process.destroy();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } finally {
+
+                }
+            }
+        }).start();
+
+    }
+
+    /**
+     * Get click and Displayed log,and upload to server;
+     */
+
+    public void postLog() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Thread.currentThread().setName("postLog");
+                Thread.currentThread().setPriority(Thread.MAX_PRIORITY);
+
+                Process process = null;
+                DataOutputStream os = null;
+                jsonObject = new JSONObject();
+                jsonArray = new JSONArray();
+
+                try {
+                    String logcatCommand = "logcat |grep --line-buffered -E \"GreenDaoHelper_insert_e|Displayed\" | grep -v -E \"show|logs|back|info\" >/sdcard/logcat.log";
+//                    String logcatCommand = "logcat |grep appv";
+//                    Runtime.getRuntime().exec("logcat -c");
+                    process = Runtime.getRuntime().exec(isRoot ? COMMAND_SU : COMMAND_SH);
+                    os = new DataOutputStream(process.getOutputStream());
+                    os.write(logcatCommand.getBytes());
+                    os.writeBytes(COMMAND_LINE_END);
+                    os.flush();
+
+
+                    bufferedReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+
+                    String line = null;
+
+                    while (!isServiceStop) {
+                        try {
+                            bufferedReader.mark(9999);
+                            line = bufferedReader.readLine();
+                            if (line != null) {
+                                bw.write(line + Constants.LINE_END);
+                                if (line.contains("Displayed") && !line.contains("postLog url")) {
+                                    JSONObject object = new JSONObject();
+                                    object.put("displayed", line);
+                                    jsonArray.put(line);
+                                } else if (line.contains("appv") && !line.contains("postLog url")) {
+                                    String[] strs = line.split(" ");
+                                    JSONObject object = new JSONObject();
+                                    JSONObject object1 = new JSONObject(strs[strs.length - 1]);
+                                    object.put("time", strs[1]);
+                                    object.put("cspot", object1.get("cspot"));
+                                    object.put("pt", object1.get("pt"));
+                                    jsonArray.put(object);
+                                }
+
+                            } else {
+//                                bufferedReader.reset();
+                                Thread.currentThread().sleep(Settings.SLEEP_TIME);
+                                continue;
+                            }
+
+                            if (jsonArray.length() >= 5) {
+                                jsonObject.put("testSuitId", HttpUtils.testSuitId);
+                                jsonObject.put("log", jsonArray);
+                                HttpUtils.postLog(jsonObject.toString());
+                                jsonArray = new JSONArray();
+                                jsonObject = new JSONObject();
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+
+                } catch (IOException e) {
+                    Log.v(Settings.LOG_TAG, e.toString());
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
+                    Log.v(Settings.LOG_TAG, e.toString());
+                    e.printStackTrace();
+                } finally {
+                    try {
+                        if (process != null) {
+                            process.destroy();
+                        }
+
+                        os.close();
+                        bufferedReader.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+
+                }
+
+            }
+        }).start();
+
+    }
+
 
     /**
      * Try to get start time from logcat.
@@ -607,6 +756,7 @@ public class EmmageeService extends Service {
         boolean isSendSuccessfully = false;
         try {
             isSendSuccessfully = MailSender.sendTextMail(sender, des.decrypt(password), smtp, "Emmagee Performance Test Report", "see attachment", resultFilePath, receivers);
+
         } catch (Exception e) {
             isSendSuccessfully = false;
         }
@@ -615,6 +765,23 @@ public class EmmageeService extends Service {
         } else {
             Toast.makeText(this, getString(R.string.send_fail_toast) + EmmageeService.resultFilePath, Toast.LENGTH_LONG).show();
         }
+
+        HttpUtils.stopTest();
+
+        try {
+            if (bufferedWriter != null) {
+                bufferedWriter.close();
+
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        HttpUtils.uploadFile(0, "/sdcard/elong_qa.txt", "elong_qa.txt");
+        HttpUtils.uploadFile(1, "/sdcard/ElongNetLog.txt", "ElongNetLog.txt");
+        HttpUtils.uploadFile(2, "/sdcard/elong_mvt_log.txt", "elong_mvt_log.txt");
+        HttpUtils.uploadFile(3, "/sdcard/logcat.log", "logcat.log");
+
         super.onDestroy();
         stopForeground(true);
     }

@@ -2,9 +2,12 @@ package com.netease.qa.emmagee.utils;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.PipedInputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -14,7 +17,9 @@ import org.json.JSONObject;
 
 import com.netease.qa.emmagee.service.EmmageeService;
 
+import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
 
 public class HttpUtils {
     public static int testSuitId;
@@ -24,10 +29,8 @@ public class HttpUtils {
     private static BufferedReader reader;
     private static String synchronize = "dragon";
 
-    public static final String COMMAND_SU = "su";
-    public static final String COMMAND_SH = "sh";
-    public static final String COMMAND_EXIT = "exit\n";
-    public static final String COMMAND_LINE_END = "\n";
+    private static HttpURLConnection connection = null;
+
 
     public static String createTestSuit(final String param_json) {
         new Thread(new Runnable() {
@@ -53,7 +56,7 @@ public class HttpUtils {
                             while ((line = reader.readLine()) != null) {
                                 response.append(line);
                             }
-                            Log.v(Settings.LOG_TAG, "createTestSuit response:" + response.toString());
+//                            Log.v(Settings.LOG_TAG, "createTestSuit response:" + response.toString());
                             in.close();
                             reader.close();
                             JSONObject json = new JSONObject(response.toString());
@@ -94,7 +97,7 @@ public class HttpUtils {
                         connection.setConnectTimeout(3000);
                         connection.setReadTimeout(3000);
                         int responsecode = connection.getResponseCode();
-                        Log.v(Settings.LOG_TAG, "postAppPerfData url:" + createUrl + "," + responsecode);
+//                        Log.v(Settings.LOG_TAG, "postAppPerfData url:" + createUrl + "," + responsecode);
                     } catch (IOException e) {
                         Log.v(Settings.LOG_TAG, e.toString());
                         e.printStackTrace();
@@ -126,7 +129,7 @@ public class HttpUtils {
                         connection.setConnectTimeout(3000);
                         connection.setReadTimeout(3000);
                         int responsecode = connection.getResponseCode();
-                        Log.v(Settings.LOG_TAG, "stopTest url:" + createUrl + "," + responsecode);
+//                        Log.v(Settings.LOG_TAG, "stopTest url:" + createUrl + "," + responsecode);
                     } catch (IOException e) {
                         Log.v(Settings.LOG_TAG, e.toString());
                         e.printStackTrace();
@@ -143,83 +146,119 @@ public class HttpUtils {
         return "";
     }
 
-    public static String postLog(boolean isServiceStop, final boolean isRoot) {
+    public static String postLog(final String param_json) {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                Thread.currentThread().setName("postLog");
-                HttpURLConnection connection = null;
-                BufferedReader bufferedReader = null;
-                Process process = null;
-                DataOutputStream os = null;
-                int result = -1;
                 try {
-//                    Thread.currentThread().sleep(3000);
-                    String logcatCommand = "logcat |grep --line-buffered -E \"GreenDaoHelper_insert_e|Displayed\" | grep -v -E \"show|logs|back|info\"";
-//						String logcatCommand = "logcat |grep app";
-                    process = Runtime.getRuntime().exec(isRoot ? COMMAND_SU : COMMAND_SH);
-                    os = new DataOutputStream(process.getOutputStream());
-                    os.write(logcatCommand.getBytes());
-                    os.writeBytes(COMMAND_LINE_END);
-//						os.writeBytes(COMMAND_EXIT);
-                    os.flush();
-//						result = process.waitFor();
+                    createUrl = "http://" + Settings.serverIp + ":" + Settings.serverPort + "/postLog?data=" + URLEncoder.encode(param_json, "utf-8");
+                    URL url = new URL(createUrl);
+                    connection = (HttpURLConnection) url.openConnection();
+                    connection.setRequestMethod("GET");
+                    connection.setConnectTimeout(3000);
+                    connection.setReadTimeout(3000);
+                    int responsecode = connection.getResponseCode();
+                    if (responsecode == 200) {
 
-                    bufferedReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-//						StringBuilder stringBuilder = new StringBuilder();
-                    String line = "";
-
-                    while (true) {
-                        bufferedReader.mark(9999);
-                        line = bufferedReader.readLine();
-                        if (line != null) {
-                            if ((line.contains("GreenDaoHelper_insert_e:: {\"appv\":") && line.contains("click")) || line.contains("Displayed")) {
-
-                            }
-                            EmmageeService.bw.write(line + Constants.LINE_END);
-                        } else {
-                            bufferedReader.reset();
-                            Thread.currentThread().sleep(Settings.SLEEP_TIME);
-                            continue;
-                        }
-//                        Thread.currentThread().sleep(2000);
                     }
-
-//						createUrl = "http://" + Settings.serverIp + ":" + Settings.serverPort + "/postLog?data=" + URLEncoder.encode(log_json, "utf-8");
-//						URL url = new URL(createUrl);
-//						connection = (HttpURLConnection) url.openConnection();
-//						connection.setRequestMethod("GET");
-//						connection.setConnectTimeout(3000);
-//						connection.setReadTimeout(3000);
-//						int responsecode = connection.getResponseCode();
-//						Log.v(Settings.LOG_TAG, "postLog url:" + createUrl + "," + responsecode);
                 } catch (IOException e) {
                     Log.v(Settings.LOG_TAG, e.toString());
                     e.printStackTrace();
-                } catch (InterruptedException e) {
-                    Log.v(Settings.LOG_TAG, e.toString());
-                    e.printStackTrace();
                 } finally {
-                    try {
-                        if (process != null) {
-                            process.destroy();
-                        }
-
-                        if (connection != null) {
-                            connection.disconnect();
-                        }
-                        os.close();
-                        bufferedReader.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
+                    if (connection != null) {
+                        connection.disconnect();
                     }
-
 
                 }
 
             }
         }).start();
 
-        return "";
+        return "success";
+    }
+
+    public static String uploadFile(final int logType, final String filePath, final String filename) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    File file = new File(filePath);
+                    if (file.exists()) {
+                        createUrl = "http://" + Settings.serverIp + ":" + Settings.serverPort + "/uploadFile";
+                        String end = "\r\n";
+                        String twoHyphens = "--";
+                        String boundary = "----WebKitFormBoundaryczjBYzhshjq4MPAJ";
+                        try {
+                            URL url = new URL(createUrl);
+                            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+
+                            con.setDoInput(true);
+                            con.setDoOutput(true);
+                            con.setUseCaches(false);
+
+                            con.setRequestMethod("POST");
+
+                            con.setRequestProperty("Connection", "Keep-Alive");
+                            con.setRequestProperty("Charset", "UTF-8");
+                            con.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + boundary);
+
+                            DataOutputStream ds = new DataOutputStream(con.getOutputStream());
+
+                            ds.writeBytes(twoHyphens + boundary + end);
+                            ds.writeBytes("Content-Disposition: form-data; " + "name=\"testSuitId\"" + end + end + HttpUtils.testSuitId);
+                            ds.writeBytes(end);
+
+                            ds.writeBytes(twoHyphens + boundary + end);
+                            ds.writeBytes("Content-Disposition: form-data; " + "name=\"logType\"" + end + end + logType);
+                            ds.writeBytes(end);
+
+                            ds.writeBytes(twoHyphens + boundary + end);
+                            ds.writeBytes("Content-Disposition: form-data; " + "name=\"log\"; filename=\"" + filename + "\"" + end);
+                            ds.writeBytes(end);
+
+                            FileInputStream fStream = new FileInputStream(filePath);
+
+                            int bufferSize = 1024;
+                            byte[] buffer = new byte[bufferSize];
+                            int length = -1;
+
+                            while ((length = fStream.read(buffer)) != -1) {
+
+                                ds.write(buffer, 0, length);
+                            }
+                            ds.writeBytes(end);
+                            ds.writeBytes(twoHyphens + boundary + twoHyphens + end);
+
+                            fStream.close();
+                            ds.flush();
+                            InputStream is = con.getInputStream();
+                            int ch;
+                            StringBuffer b = new StringBuffer();
+                            while ((ch = is.read()) != -1) {
+                                b.append((char) ch);
+                            }
+                            Log.v(Settings.LOG_TAG, "上传成功:" + b.toString().trim());
+                            ds.close();
+                        } catch (Exception e) {
+                            Log.v(Settings.LOG_TAG, "上传失败:" + e);
+                        }
+                    }else{
+                        Log.v(Settings.LOG_TAG, "file not exists. filepath="+filePath);
+                    }
+                } finally {
+                    if (connection != null) {
+                        connection.disconnect();
+                    }
+
+                }
+
+            }
+        }).start();
+
+        return "success";
+    }
+
+    public void socket(){
+        PipedInputStream pin = new PipedInputStream();
     }
 }
