@@ -26,6 +26,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -98,7 +99,12 @@ public class MainPageActivity extends Activity {
 					if (adapter.checkedProg != null) {
 						String packageName = adapter.checkedProg.getPackageName();
 						String processName = adapter.checkedProg.getProcessName();
-						String appVersion = adapter.checkedProg.getAppVersion();
+						String appVersion = null;
+						try {
+							appVersion = getPackageManager().getPackageInfo(packageName, PackageManager.GET_ACTIVITIES).versionName;
+						} catch (PackageManager.NameNotFoundException e) {
+							e.printStackTrace();
+						}
 						int uid = adapter.checkedProg.getUid();
 						Intent intent = getPackageManager().getLaunchIntentForPackage(packageName);
 						String startActivity = "";

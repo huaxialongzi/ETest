@@ -28,7 +28,6 @@ public class Programe implements Comparable<Programe> {
     private Drawable icon;
     private String processName;
     private String packageName;
-    private String appVersion;
     private int pid;
     private int uid;
 
@@ -71,14 +70,6 @@ public class Programe implements Comparable<Programe> {
 
     public void setPid(int pid) {
         this.pid = pid;
-    }
-
-    public String getAppVersion() {
-        return appVersion;
-    }
-
-    public void setAppVersion(String versionName) {
-        this.appVersion = versionName;
     }
 
     @Override

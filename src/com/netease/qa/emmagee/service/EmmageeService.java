@@ -455,7 +455,7 @@ public class EmmageeService extends Service {
                 try {
                     Process process = null;
                     DataOutputStream os = null;
-                    String logcatCommand = "logcat |grep --line-buffered -E \"GreenDaoHelper_insert_e|Displayed\" | grep -v -E \"show|logs|back|info\"";
+                    String logcatCommand = "logcat -v time |grep --line-buffered -E \"GreenDaoHelper_insert_e|Displayed\" | grep -v -E \"show|logs|back|info\"";
                     Runtime.getRuntime().exec("logcat -c");
                     process = Runtime.getRuntime().exec(isRoot ? COMMAND_SU : COMMAND_SH);
                     os = new DataOutputStream(process.getOutputStream());

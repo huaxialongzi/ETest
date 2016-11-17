@@ -141,12 +141,6 @@ public class ProcessInfo {
 			programe.setPackageName(appinfo.processName);
 			programe.setProcessName(appinfo.loadLabel(pm).toString());
 			programe.setIcon(appinfo.loadIcon(pm));
-			try {
-				programe.setAppVersion(pm.getPackageInfo(programe.getPackageName(), PackageManager.GET_ACTIVITIES).versionName.toString());
-			} catch (NameNotFoundException e) {
-				e.printStackTrace();
-				programe.setAppVersion("unknown");
-			}
 			progressList.add(programe);
 		}
 		Collections.sort(progressList);
