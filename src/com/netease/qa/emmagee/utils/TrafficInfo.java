@@ -53,9 +53,11 @@ public class TrafficInfo {
 
 		// Use getUidRxBytes and getUidTxBytes to get network traffic,these API
 		// return both tcp and udp usage
-		rcvTraffic = TrafficStats.getUidRxBytes(Integer.parseInt(uid));
-		sndTraffic = TrafficStats.getUidTxBytes(Integer.parseInt(uid));
+//		rcvTraffic = TrafficStats.getUidRxBytes(Integer.parseInt(uid));
+//		sndTraffic = TrafficStats.getUidTxBytes(Integer.parseInt(uid));
 
+		rcvTraffic = TrafficStats.getTotalRxBytes();
+		sndTraffic = TrafficStats.getTotalTxBytes();
 		if (rcvTraffic == UNSUPPORTED || sndTraffic == UNSUPPORTED) {
 			return UNSUPPORTED;
 		} else

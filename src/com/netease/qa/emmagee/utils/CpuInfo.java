@@ -335,6 +335,7 @@ public class CpuInfo {
 					jsonarr.put(currentBatt);
 					jsonarr.put(temperature);
 					jsonarr.put(voltage);
+					jsonarr.put(fps);
 					jsonobj.put("testSuitId", HttpUtils.testSuitId);
 					jsonobj.put("data", jsonarr);
 					
