@@ -205,6 +205,7 @@ public class EmmageeService extends Service {
         builder.setContentIntent(contentIntent).setSmallIcon(R.drawable.icon).setWhen(System.currentTimeMillis()).setAutoCancel(true).setContentTitle("ETest");
         startForeground(startId, builder.build());
 
+        HttpUtils.testSuitId = 0;
         pid = intent.getExtras().getInt("pid");
         uid = intent.getExtras().getInt("uid");
         processName = intent.getExtras().getString("processName");

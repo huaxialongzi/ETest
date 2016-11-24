@@ -33,52 +33,44 @@ public class HttpUtils {
 
 
     public static String createTestSuit(final String param_json) {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                synchronized (synchronize) {
-                    HttpURLConnection connection = null;
-                    try {
-                        Thread.currentThread().setName("createTestSuit");
-                        createUrl = "http://" + Settings.serverIp + ":" + Settings.serverPort + "/createTestSuit?data=" + URLEncoder.encode(param_json, "utf-8");
-                        URL url = new URL(createUrl);
-                        connection = (HttpURLConnection) url.openConnection();
-                        connection.setRequestMethod("GET");
-                        connection.setConnectTimeout(3000);
-                        connection.setReadTimeout(3000);
-                        int responsecode = connection.getResponseCode();
-                        Log.v(Settings.LOG_TAG, "createTestSuit url:" + createUrl + "," + responsecode);
-                        if (responsecode == 200) {
-                            in = connection.getInputStream();
-                            reader = new BufferedReader(new InputStreamReader(in));
-                            StringBuffer response = new StringBuffer();
-                            String line = "";
-                            while ((line = reader.readLine()) != null) {
-                                response.append(line);
-                            }
-//                            Log.v(Settings.LOG_TAG, "createTestSuit response:" + response.toString());
-                            in.close();
-                            reader.close();
-                            JSONObject json = new JSONObject(response.toString());
-                            testSuitId = json.getInt("testSuitId");
-                            EmmageeService.bw.write("Test SuitId" + Constants.COMMA + testSuitId + Constants.LINE_END);
-                        }
-                    } catch (IOException e) {
-                        Log.v(Settings.LOG_TAG, e.toString());
-                        e.printStackTrace();
-                    } catch (JSONException e) {
-                        Log.v(Settings.LOG_TAG, e.toString());
-                        e.printStackTrace();
-                    } finally {
-                        if (connection != null) {
-                            connection.disconnect();
-                        }
-
-                    }
+        HttpURLConnection connection = null;
+        try {
+            Thread.currentThread().setName("createTestSuit");
+            createUrl = "http://" + Settings.serverIp + ":" + Settings.serverPort + "/createTestSuit?data=" + URLEncoder.encode(param_json, "utf-8");
+            URL url = new URL(createUrl);
+            connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("GET");
+            connection.setConnectTimeout(3000);
+            connection.setReadTimeout(3000);
+            int responsecode = connection.getResponseCode();
+            Log.v(Settings.LOG_TAG, "createTestSuit url:" + createUrl + "," + responsecode);
+            if (responsecode == 200) {
+                in = connection.getInputStream();
+                reader = new BufferedReader(new InputStreamReader(in));
+                StringBuffer response = new StringBuffer();
+                String line = "";
+                while ((line = reader.readLine()) != null) {
+                    response.append(line);
                 }
+//                            Log.v(Settings.LOG_TAG, "createTestSuit response:" + response.toString());
+                in.close();
+                reader.close();
+                JSONObject json = new JSONObject(response.toString());
+                testSuitId = json.getInt("testSuitId");
+                EmmageeService.bw.write("Test SuitId" + Constants.COMMA + testSuitId + Constants.LINE_END);
             }
-        }).start();
+        } catch (IOException e) {
+            Log.v(Settings.LOG_TAG, e.toString());
+            e.printStackTrace();
+        } catch (JSONException e) {
+            Log.v(Settings.LOG_TAG, e.toString());
+            e.printStackTrace();
+        } finally {
+            if (connection != null) {
+                connection.disconnect();
+            }
 
+        }
         return "";
     }
 
@@ -242,8 +234,8 @@ public class HttpUtils {
                         } catch (Exception e) {
                             Log.v(Settings.LOG_TAG, "上传失败:" + e);
                         }
-                    }else{
-                        Log.v(Settings.LOG_TAG, "file not exists. filepath="+filePath);
+                    } else {
+                        Log.v(Settings.LOG_TAG, "file not exists. filepath=" + filePath);
                     }
                 } finally {
                     if (connection != null) {
@@ -258,7 +250,7 @@ public class HttpUtils {
         return "success";
     }
 
-    public void socket(){
+    public void socket() {
         PipedInputStream pin = new PipedInputStream();
     }
 }
