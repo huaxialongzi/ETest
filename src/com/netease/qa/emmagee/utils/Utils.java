@@ -1,7 +1,13 @@
 package com.netease.qa.emmagee.utils;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.util.UUID;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -165,6 +171,33 @@ public class Utils {
 		}
 		return macAddress;
 
+	}
+
+	/** 压缩单个文件*/
+	public static void ZipFile(String filepath ,String zippath) {
+		try {
+			// new a file input stream
+			FileInputStream fis = new FileInputStream(filepath);
+			BufferedInputStream bis = new BufferedInputStream(fis);
+			ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(zippath));
+			BufferedOutputStream bos = new BufferedOutputStream(zos);
+
+			// set the file name in the .zip file
+			zos.putNextEntry(new ZipEntry("elong_qa_network.log"));
+
+			byte[] b = new byte[1024];
+			while (true) {
+				int len = bis.read(b);
+				if (len == -1)
+					break;
+				bos.write(b, 0, len);
+			}
+			fis.close();
+			zos.close();
+			bis.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	private static boolean isEmpty(String s) {

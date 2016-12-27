@@ -153,7 +153,7 @@ public class ServerSettingsActivity extends Activity {
 			public void run() {
 				synchronized (synchronize) {
 					HttpURLConnection connection = null;
-					String createUrl = "http://" + Settings.serverIp + ":" + Settings.serverPort + "/createTestSuit?data=";
+					String createUrl = "http://" + Settings.serverIp + ":" + Settings.serverPort + "/testConnect";
 					try {
 						Log.v(Settings.LOG_TAG, "server test url:" + createUrl);
 						URL url = new URL(createUrl);

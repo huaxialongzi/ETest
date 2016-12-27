@@ -130,7 +130,6 @@ public class EmmageeService extends Service {
     private JSONArray jsonArray = new JSONArray();
     private static BufferedReader bufferedReader = null;
     private static BufferedWriter bufferedWriter = null;
-    private boolean needuploadlog = true;
 
     public static BufferedWriter bw;
     public static FileOutputStream out;
@@ -661,7 +660,12 @@ public class EmmageeService extends Service {
         } catch (Exception e) {
             currentBatt = Constants.NA;
         }
-        ArrayList<String> processInfo = cpuInfo.getCpuRatioInfo(totalBatt, currentBatt, temperature, voltage, String.valueOf(fpsInfo.fps()), isRoot);
+        ArrayList<String> processInfo = null;
+        if (isRoot) {
+            processInfo = cpuInfo.getCpuRatioInfo(totalBatt, currentBatt, temperature, voltage, String.valueOf(fpsInfo.fps()), isRoot);
+        }else{
+            processInfo = cpuInfo.getCpuRatioInfo(totalBatt, currentBatt, temperature, voltage, "0", isRoot);
+        }
         if (isFloating) {
             String processCpuRatio = "0.00";
             String totalCpuRatio = "0.00";
@@ -785,7 +789,7 @@ public class EmmageeService extends Service {
         }
 
         HttpUtils.uploadFile(0, "/sdcard/elong_qa.txt", "elong_qa.txt");
-        HttpUtils.uploadFile(1, "/sdcard/ElongNetLog.txt", "ElongNetLog.txt");
+        HttpUtils.uploadFile(1, "/sdcard/elong_qa_network.log", "elong_qa_network.log");
         HttpUtils.uploadFile(2, "/sdcard/elong_mvt_log.txt", "elong_mvt_log.txt");
         HttpUtils.uploadFile(3, "/sdcard/logcat.log", "logcat.log");
 

@@ -52,7 +52,7 @@ public class HttpUtils {
                 while ((line = reader.readLine()) != null) {
                     response.append(line);
                 }
-//                            Log.v(Settings.LOG_TAG, "createTestSuit response:" + response.toString());
+//              Log.v(Settings.LOG_TAG, "createTestSuit response:" + response.toString());
                 in.close();
                 reader.close();
                 JSONObject json = new JSONObject(response.toString());
@@ -174,7 +174,16 @@ public class HttpUtils {
             @Override
             public void run() {
                 try {
-                    File file = new File(filePath);
+
+                    String file_path = filePath;
+                    String file_name = filename;
+                    if (filename.equals("elong_qa_network.log")){
+                        file_path = filePath.replace("log","zip");
+                        file_name = filename.replace("log","zip");
+                        Utils.ZipFile(filePath,file_path);
+                        Thread.currentThread().sleep(2000);
+                    }
+                    File file = new File(file_path);
                     if (file.exists()) {
                         createUrl = "http://" + Settings.serverIp + ":" + Settings.serverPort + "/uploadFile";
                         String end = "\r\n";
@@ -205,10 +214,10 @@ public class HttpUtils {
                             ds.writeBytes(end);
 
                             ds.writeBytes(twoHyphens + boundary + end);
-                            ds.writeBytes("Content-Disposition: form-data; " + "name=\"log\"; filename=\"" + filename + "\"" + end);
+                            ds.writeBytes("Content-Disposition: form-data; " + "name=\"log\"; filename=\"" + file_name + "\"" + end);
                             ds.writeBytes(end);
 
-                            FileInputStream fStream = new FileInputStream(filePath);
+                            FileInputStream fStream = new FileInputStream(file);
 
                             int bufferSize = 1024;
                             byte[] buffer = new byte[bufferSize];
@@ -229,14 +238,16 @@ public class HttpUtils {
                             while ((ch = is.read()) != -1) {
                                 b.append((char) ch);
                             }
-                            Log.v(Settings.LOG_TAG, "上传成功:" + b.toString().trim());
+                            Log.v(Settings.LOG_TAG, file_name+"上传成功:" + b.toString().trim());
                             ds.close();
                         } catch (Exception e) {
-                            Log.v(Settings.LOG_TAG, "上传失败:" + e);
+                            Log.v(Settings.LOG_TAG, file_name+"上传失败:" + e);
                         }
                     } else {
-                        Log.v(Settings.LOG_TAG, "file not exists. filepath=" + filePath);
+                        Log.v(Settings.LOG_TAG, "File not exists. filepath=" + file_path);
                     }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 } finally {
                     if (connection != null) {
                         connection.disconnect();

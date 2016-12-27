@@ -115,7 +115,8 @@ public class MainPageActivity extends Activity {
 							Utils.deletefile("/sdcard/elong_mvt_log.txt");
 							Utils.deletefile("/sdcard/elong_qa.txt");
 							Utils.deletefile("/sdcard/logcat.log");
-							Utils.deletefile("/sdcard/ElongNetLog.txt");
+							Utils.deletefile("/sdcard/elong_qa_network.log");
+							Utils.deletefile("/sdcard/elong_qa_network.zip");
 
 						} catch (IOException e) {
 							Log.d(LOG_TAG, e.getMessage());
