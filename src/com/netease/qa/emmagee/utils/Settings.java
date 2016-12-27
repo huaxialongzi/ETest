@@ -23,7 +23,7 @@ public final class Settings {
 	public static final String LOG_TAG = "mylog";
 	
 	public static String serverIp = "114.215.153.178";
-	public static String serverPort = "8088";
+	public static String serverPort = "80";
 	public static final String KEY_SERVER_IP = "serverip";
 	public static final String KEY_SERVER_PORT = "serverport";
 

@@ -192,6 +192,7 @@ public class Utils {
 					break;
 				bos.write(b, 0, len);
 			}
+			bos.flush();
 			fis.close();
 			zos.close();
 			bis.close();
